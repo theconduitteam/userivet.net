@@ -16,8 +16,8 @@ body.dark{--bg:#111116;--panel:#1b1a22;--ink:#f4f2fa;--muted:#aaa6b6;--line:#302
 <div id="app"></div><div id="toast" class="hidden" style="position:fixed;bottom:80px;left:50%;transform:translateX(-50%);z-index:50;background:#19181f;color:white;padding:12px 16px;border-radius:12px;box-shadow:var(--shadow)"></div>
 <script>
 /* Configure with your Supabase project URL and public anon key. Never use service_role in browser code. */
-const SUPABASE_URL="https://YOUR_PROJECT_REF.supabase.co";
-const SUPABASE_ANON_KEY="YOUR_SUPABASE_ANON_KEY";
+const SUPABASE_URL="https://szbrcnmvjxypfoqdwrgr.supabase.co";
+const SUPABASE_ANON_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN6YnJjbm12anh5cGZvcWR3cmdyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTI1MDMzMzIsImV4cCI6MjEwODA3OTMzMn0.YZ7_3yQ77F06ZUH4yb1O0emf-Bz1C5ZTy7SzRK2lqo4";
 const sharedAuthStorage={getItem:async(key)=>{const prefix=encodeURIComponent(key)+'=';const parts=document.cookie.split('; ').filter(x=>x.startsWith(prefix));if(!parts.length)return null;return decodeURIComponent(parts[0].slice(prefix.length))},setItem:async(key,value)=>{document.cookie=encodeURIComponent(key)+'='+encodeURIComponent(value)+'; Domain=.userivet.net; Path=/; Max-Age=31536000; Secure; SameSite=Lax'},removeItem:async(key)=>{document.cookie=encodeURIComponent(key)+'=; Domain=.userivet.net; Path=/; Max-Age=0; Secure; SameSite=Lax'}};
 const sb=(window.supabase&&!SUPABASE_URL.includes("YOUR_PROJECT_REF")&&!SUPABASE_ANON_KEY.includes("YOUR_"))?window.supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY,{auth:{storage:sharedAuthStorage,persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}}):null;
 const AUTH_URL='https://auth.userivet.net/', DESKTOP_URL='https://userivet.net/', MOBILE_URL='https://m.userivet.net/';
